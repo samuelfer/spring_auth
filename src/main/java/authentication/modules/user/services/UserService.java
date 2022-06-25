@@ -1,5 +1,6 @@
 package authentication.modules.user.services;
 
+import authentication.modules.product.entities.Product;
 import authentication.modules.user.entities.User;
 import authentication.modules.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +10,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
-public class CreateUserService {
+public class UserService {
 
   @Autowired
   UserRepository userRepository;
@@ -19,7 +22,11 @@ public class CreateUserService {
     return new BCryptPasswordEncoder();
   }
 
-  public ResponseEntity<User> create(User user) {
+  public List<User> listAll() {
+    return userRepository.findAll();
+  }
+
+  public ResponseEntity<User> save(User user) {
 
     User existsUser = userRepository.findByUsername(user.getUsername());
 

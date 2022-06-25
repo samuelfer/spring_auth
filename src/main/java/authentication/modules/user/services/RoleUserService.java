@@ -15,12 +15,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CreateRoleUserService {
+public class RoleUserService {
 
   @Autowired
   UserRepository userRepository;
 
-  public ResponseEntity<User> create(CreateUserRoleDTO createUserRoleDTO) {
+  public ResponseEntity<User> save(CreateUserRoleDTO createUserRoleDTO) {
 
     Optional<User> userExists = userRepository.findById(createUserRoleDTO.getUserId());
     List<Role> roles = new ArrayList<>();
