@@ -10,6 +10,8 @@ import authentication.modules.user.entities.Role;
 import authentication.modules.user.entities.User;
 import authentication.modules.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,7 +20,7 @@ public class CreateRoleUserService {
   @Autowired
   UserRepository userRepository;
 
-  public User create(CreateUserRoleDTO createUserRoleDTO) {
+  public ResponseEntity<User> create(CreateUserRoleDTO createUserRoleDTO) {
 
     Optional<User> userExists = userRepository.findById(createUserRoleDTO.getIdUser());
     List<Role> roles = new ArrayList<>();
@@ -35,9 +37,7 @@ public class CreateRoleUserService {
 
     user.setRoles(roles);
 
-    userRepository.save(user);
-
-    return user;
+    return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
 
   }
 }
