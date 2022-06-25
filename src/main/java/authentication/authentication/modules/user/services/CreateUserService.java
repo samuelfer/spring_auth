@@ -3,7 +3,7 @@ package authentication.authentication.modules.user.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import authentication.authentication.modules.user.UserRepository;
+import authentication.authentication.modules.user.repositories.UserRepository;
 import authentication.authentication.modules.user.entities.User;
 
 @Service
