@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
 import lombok.Data;
 
 @Entity
@@ -17,6 +18,7 @@ public class Product {
   @Id
   @GeneratedValue
   private UUID id;
+  @NotNull
   private String name;
 
   private String description;
