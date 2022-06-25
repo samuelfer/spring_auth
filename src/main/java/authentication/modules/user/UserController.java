@@ -33,7 +33,7 @@ public class UserController {
     }
   }
 
-  @PostMapping("/role")
+  @PostMapping("/role/create")
   public ResponseEntity<User> createUserRole(@RequestBody CreateUserRoleDTO createUserRoleDTO) {
     try {
       return createRoleUserService.create(createUserRoleDTO);

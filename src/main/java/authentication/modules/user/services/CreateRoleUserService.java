@@ -22,14 +22,14 @@ public class CreateRoleUserService {
 
   public ResponseEntity<User> create(CreateUserRoleDTO createUserRoleDTO) {
 
-    Optional<User> userExists = userRepository.findById(createUserRoleDTO.getIdUser());
+    Optional<User> userExists = userRepository.findById(createUserRoleDTO.getUserId());
     List<Role> roles = new ArrayList<>();
 
     if (userExists.isEmpty()) {
       throw new Error("User does not exists!");
     }
 
-    roles = createUserRoleDTO.getIdsRoles().stream().map(role -> {
+    roles = createUserRoleDTO.getRolesIds().stream().map(role -> {
       return new Role(role);
     }).collect(Collectors.toList());
 
