@@ -16,8 +16,8 @@ public class UserPrincipal implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities = new ArrayList<>();
 
     public UserPrincipal(User user) {
-        this.username = getUsername();
-        this.password = getPassword();
+        this.username = user.getUsername();
+        this.password = user.getPassword();
 
         authorities = user.getRoles().stream().map(role -> {
             return new SimpleGrantedAuthority("ROLE_".concat(role.getName()));
@@ -37,12 +37,12 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public String getPassword() {
-        return getPassword();
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return getUsername();
+        return username;
     }
 
     @Override
