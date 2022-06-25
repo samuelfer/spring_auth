@@ -1,17 +1,16 @@
-package authentication.authentication.modules.user.services;
+package authentication.modules.user.services;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import authentication.modules.user.dto.CreateUserRoleDTO;
+import authentication.modules.user.entities.Role;
+import authentication.modules.user.entities.User;
+import authentication.modules.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import authentication.authentication.modules.user.repositories.UserRepository;
-import authentication.authentication.modules.user.dto.CreateUserRoleDTO;
-import authentication.authentication.modules.user.entities.Role;
-import authentication.authentication.modules.user.entities.User;
 
 @Service
 public class CreateRoleUserService {
@@ -19,7 +18,7 @@ public class CreateRoleUserService {
   @Autowired
   UserRepository userRepository;
 
-  public User execute(CreateUserRoleDTO createUserRoleDTO) {
+  public User create(CreateUserRoleDTO createUserRoleDTO) {
 
     Optional<User> userExists = userRepository.findById(createUserRoleDTO.getIdUser());
     List<Role> roles = new ArrayList<>();

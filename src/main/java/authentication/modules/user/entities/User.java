@@ -1,4 +1,4 @@
-package authentication.authentication.modules.user.entities;
+package authentication.modules.user.entities;
 
 import java.util.List;
 import java.util.UUID;
@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.ManyToAny;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

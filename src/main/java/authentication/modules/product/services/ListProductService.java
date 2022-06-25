@@ -1,12 +1,12 @@
-package authentication.authentication.modules.product.services;
+package authentication.modules.product.services;
 
 import java.util.List;
 
+import authentication.modules.product.entities.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import authentication.authentication.modules.product.repositories.ProductRepository;
-import authentication.authentication.modules.product.entities.Product;
+import authentication.modules.product.repositories.ProductRepository;
 
 @Service
 public class ListProductService {

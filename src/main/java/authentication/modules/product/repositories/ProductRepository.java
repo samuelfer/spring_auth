@@ -1,10 +1,9 @@
-package authentication.authentication.modules.product.repositories;
+package authentication.modules.product.repositories;
 
 import java.util.UUID;
 
+import authentication.modules.product.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import authentication.authentication.modules.product.entities.Product;
 
 public interface ProductRepository extends JpaRepository<Product, UUID> {
 

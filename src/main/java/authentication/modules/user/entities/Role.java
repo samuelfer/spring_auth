@@ -1,4 +1,4 @@
-package authentication.authentication.modules.user.entities;
+package authentication.modules.user.entities;
 
 import java.util.UUID;
 

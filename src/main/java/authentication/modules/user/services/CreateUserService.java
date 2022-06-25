@@ -1,10 +1,9 @@
-package authentication.authentication.modules.user.services;
+package authentication.modules.user.services;
 
+import authentication.modules.user.entities.User;
+import authentication.modules.user.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import authentication.authentication.modules.user.repositories.UserRepository;
-import authentication.authentication.modules.user.entities.User;
 
 @Service
 public class CreateUserService {
@@ -12,7 +11,7 @@ public class CreateUserService {
   @Autowired
   UserRepository userRepository;
 
-  public User execute(User user) {
+  public User create(User user) {
 
     User existsUser = userRepository.findByUsername(user.getUsername());
 
